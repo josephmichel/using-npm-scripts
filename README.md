@@ -67,11 +67,11 @@ The application is tested on android and IOS devices in addition to Windows and 
 
 ## About The Code
 This section is a brief about the code written in this project.
-##### CSS
+### CSS
 - Using Normalize.css, In order to make browsers render all elements more consistently and in line with modern standards.
-##### HTML5
+### HTML5
 - The `no-js` class is provided in order to allow you to more easily and explicitly add custom styles based on whether JavaScript is disabled (`.no-js`) or enabled (`.js`). Using this technique also helps [avoid the FOUC]
-##### JS
+### JS
 
 ## Working On
 - Add Favicon
