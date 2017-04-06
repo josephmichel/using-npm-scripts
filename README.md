@@ -4,7 +4,7 @@ A simple search application based on the provided wireframes and UI, this applic
 
 This is a link to the project [demo](http://searo.surge.com)
 
-### Features
+## Features
   * The search is using a public REST API with JavaScript.
   * Displaying partial search results in a list beneath the search field.
   * When hitting [ENTER] the selected search value is saved with date/timestamp beneath the search box (as a search history).
@@ -12,7 +12,7 @@ This is a link to the project [demo](http://searo.surge.com)
   * No plugins used.
   * Very subtle animation to add a better user experience using CSS3.
 
-### Languages and Tools
+## Languages and Tools
 * This project is build using semantic **HTML5**, **SCSS** compiled to **CSS** and **JS ES5**.
 
 * **npm scripts** is used as the building tool for: 
@@ -24,7 +24,7 @@ This is a link to the project [demo](http://searo.surge.com)
 
 * The **VS Code editor** for the production.
 
-### Browser support
+## Browser support
 This application is tested on the browsers Chrome, Safari, Firefox and Internet Explorer 10 and edge. 
 The application is tested on android and IOS devices in addition to Windows and Mac desktop.
 
@@ -47,7 +47,7 @@ The application is tested on android and IOS devices in addition to Windows and 
     ├── .README.md              # About this project and documentation.
     └── package.json            # Includes the npm scripts and dependencies for development.
 
-### usage
+## usage
 * For direct production and deployment use the folder **builds > production**
 * For developing and/or viewing the written HTML, SCSS, CSS and JS code navigate to the folder **builds > development**
 
@@ -65,7 +65,7 @@ The application is tested on android and IOS devices in addition to Windows and 
 
 6. To start developing run the command `npm start`, for final production and deploying run the command `npm run build`.
 
-### About The Code
+## About The Code
 This section is a brief about the code written in this project.
 ##### CSS
 - Using Normalize.css, In order to make browsers render all elements more consistently and in line with modern standards.
