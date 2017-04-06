@@ -73,7 +73,7 @@ This section is a brief about the code written in this project.
 - The `no-js` class is provided in order to allow you to more easily and explicitly add custom styles based on whether JavaScript is disabled (`.no-js`) or enabled (`.js`). Using this technique also helps [avoid the FOUC]
 ##### JS
 
-### Working On
+## Working On
 - Add Favicon
 - Add Reset CSS
 - Add HTML CSS and JS Lint
