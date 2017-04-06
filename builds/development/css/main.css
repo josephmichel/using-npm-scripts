@@ -1,0 +1,309 @@
+/* CSS DIRECTORY
+	- Global Settings
+	- The Header
+	- The Main Area
+	- The Input Box
+	- The List of History Search
+    - The Animations
+*/
+/* COLORS
+	- Default body text  #ffffff (white)
+	- Delete button      #793952 (red)
+	- Background Dark    #002650 (Dark Blue)
+	- Background Light   #3a56a5 (Light Blue)
+*/
+/* FONTS
+	- Default text       Helvetica Neue, Helvetica, Arial, sans-serif
+*/
+/* ==============================================================
+Global Settings
+============================================================== */
+html {
+  min-height: 100%;
+  background: #002650;
+  background: -webkit-linear-gradient(top, #002650 30%, #3a56a5 100%);
+  background: linear-gradient(to bottom, #002650 30%, #3a56a5 100%);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 1100px;
+  margin: auto;
+  box-sizing: border-box;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+/* ==============================================================
+The Header
+============================================================== */
+header {
+  margin: 5rem auto;
+  text-align: center;
+}
+
+header .logo {
+  max-width: 180px;
+  -webkit-animation: slidetop .5s linear;
+          animation: slidetop .5s linear;
+}
+
+/* ==============================================================
+The Input Box
+============================================================== */
+input:focus, button:focus {
+  outline: none;
+}
+
+#search {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  padding: 1.3rem 1.5rem 1.3rem 4.5rem;
+  background: url("../images/search.svg") no-repeat 2rem center rgba(255, 255, 255, 0.3);
+  background-size: 25px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #ffffff;
+  box-sizing: border-box;
+  -webkit-transition: background .4s ease-in-out;
+  transition: background .4s ease-in-out;
+  opacity: 0;
+  -webkit-animation: slidetop .5s linear .2s forwards;
+          animation: slidetop .5s linear .2s forwards;
+}
+
+#search:focus {
+  background: url("../images/search.svg") no-repeat 2rem center rgba(255, 255, 255, 0.6);
+  background-size: 25px;
+}
+
+#search:focus a {
+  color: #ffffff;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==============================================================
+The List of History Search
+============================================================== */
+#history {
+  font-size: 18px;
+  color: #fff;
+  list-style-type: none;
+  padding: 2rem 0;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+}
+
+#history:empty {
+  display: none;
+}
+
+#history li {
+  -webkit-animation-name: slidebottom;
+          animation-name: slidebottom;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#history li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#history li.remove {
+  -webkit-animation-name: remove;
+          animation-name: remove;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+}
+
+#history li h2 {
+  font-weight: normal;
+  display: inline-block;
+  margin: 0 0 0 2rem;
+  padding-right: 2rem;
+  width: 50%;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+#history li time {
+  font-size: 16px;
+  width: 50%;
+  letter-spacing: 2px;
+}
+
+.remove-item {
+  opacity: 0;
+  background: url("../images/delete.svg") no-repeat center center #793952;
+  background-size: 25px;
+  border: 0;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.remove-item:hover {
+  background: url("../images/delete.svg") no-repeat center center #8a2e53;
+  background-size: 25px;
+}
+
+#history li:hover .remove-item {
+  opacity: 1;
+}
+
+/* ==============================================================
+Animations
+============================================================== */
+@-webkit-keyframes slidebottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes slidebottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes remove {
+  from {
+    background: transparent;
+    opacity: 1;
+  }
+  to {
+    background: #793952;
+    opacity: 0;
+  }
+}
+
+@keyframes remove {
+  from {
+    background: transparent;
+    opacity: 1;
+  }
+  to {
+    background: #793952;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slidetop {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slidetop {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* ==============================================================
+Countries List
+============================================================== */
+#update {
+  background: #ffffff;
+  max-height: 305px;
+  /*disply 5 list items*/
+  width: 100%;
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0;
+  list-style-type: none;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 10;
+}
+
+#update ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#update li {
+  line-height: 60px;
+  cursor: pointer;
+  font-size: 18px;
+  padding-left: 2rem;
+  color: #3a56a5;
+  border-bottom: 1px solid #efefef;
+  -webkit-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
+}
+
+#update li:hover, #update li.selected {
+  background: #E1E6F4;
+}
+
+@media only screen and (max-width: 700px) {
+  #history li h2 {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvbWFpbi5zY3NzIiwibWFpbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7RUFPRTtBQUNGOzs7OztFQUtFO0FBQ0Y7O0VBRUU7QUFDRjs7aUVBRWlFO0FBQ2pFO0VBQ0ksaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUVwQixvRUFBbUM7RUFDbkMsa0VBQTJCO0NBQzlCOztBQUNEO0VBQ0ksaUJBQWlCO0VBQ2pCLFVBQVU7RUFDVixXQUFXO0NBQ2Q7O0FBQ0Q7RUFDSSxrQkFBaUI7RUFDakIsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwwREFBMEQ7Q0FDN0Q7O0FBQ0Q7O2lFQUVpRTtBQUNqRTtFQUNJLGtCQUFrQjtFQUNsQixtQkFBbUI7Q0FDdEI7O0FBQ0Q7RUFDSSxpQkFBaUI7RUFDakIsdUNBQStCO1VBQS9CLCtCQUErQjtDQUNsQzs7QUFDRDs7aUVBRWlFO0FBQ2pFO0VBQ0ksY0FBYztDQUNqQjs7QUFDRDtFQUNJLFdBQVc7RUFDWCxlQUFlO0VBQ2YsZUFBZTtFQUNmLHFDQUFxQztFQUNyQyx1RkFBa0U7RUFDbEUsc0JBQXNCO0VBQ3RCLFVBQVU7RUFDVixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGVBQWM7RUFDZCx1QkFBdUI7RUFDdkIsK0NBQStDO0VBQy9DLHVDQUF1QztFQUN2QyxXQUFXO0VBQ1gsb0RBQTRDO1VBQTVDLDRDQUE0QztDQUMvQzs7QUFDRDtFQUNJLHVGQUFrRTtFQUNsRSxzQkFBc0I7Q0FDekI7O0FBQ0Q7RUFDSSxlQUFlO0NBQ2xCOztBQUNEO0VBQ0ksZ0NBQVc7Q0FDZDs7QUFDRDtFQUNJLGdDQUFXO0NBQ2Q7O0FBQ0Q7RUFDSSxnQ0FBVztDQUNkOztBQUNEO0VBQ0ksZ0NBQVc7Q0FDZDs7QUFDRDs7aUVBRWlFO0FBQ2pFO0VBQ0ksZ0JBQWdCO0VBQ2hCLFlBQVc7RUFDWCxzQkFBc0I7RUFDdEIsZ0JBQWdCO0VBQ2hCLHFDQUFnQjtFQUNoQixpQkFBaUI7Q0FDcEI7O0FBQ0Q7RUFDSSxjQUFjO0NBQ2pCOztBQUNEO0VBQ0ksb0NBQTRCO1VBQTVCLDRCQUE0QjtFQUM1QixnQ0FBd0I7VUFBeEIsd0JBQXdCO0VBQ3hCLGdEQUFnRDtFQUNoRCx3Q0FBd0M7RUFDeEMsYUFBYTtFQUNiLHFCQUFjO0VBQWQscUJBQWM7RUFBZCxjQUFjO0VBQ2QsMEJBQW9CO01BQXBCLHVCQUFvQjtVQUFwQixvQkFBb0I7RUFDcEIsMEJBQStCO01BQS9CLHVCQUErQjtVQUEvQiwrQkFBK0I7Q0FDbEM7O0FBQ0Q7RUFDSSxxQ0FBZ0I7Q0FDbkI7O0FBQ0Q7RUFDSSwrQkFBdUI7VUFBdkIsdUJBQXVCO0VBQ3ZCLGdDQUF3QjtVQUF4Qix3QkFBd0I7Q0FDM0I7O0FBQ0Q7RUFDSSxvQkFBb0I7RUFDcEIsc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQixvQkFBb0I7RUFDcEIsV0FBVztFQUNYLGdCQUFnQjtFQUNoQixvQkFBb0I7Q0FDdkI7O0FBQ0Q7RUFDSSxnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLG9CQUFvQjtDQUN2Qjs7QUFDRDtFQUNJLFdBQVc7RUFDWCx3RUFBdUU7RUFDdkUsc0JBQXNCO0VBQ3RCLFVBQVU7RUFDVixZQUFZO0VBQ1osYUFBYTtFQUNiLGdCQUFnQjtFQUNoQiw2Q0FBNkM7RUFDN0MscUNBQXFDO0NBQ3hDOztBQUNEO0VBQ0ksd0VBQXVFO0VBQ3ZFLHNCQUFzQjtDQUN6Qjs7QUFDRDtFQUNJLFdBQVc7Q0FDZDs7QUFDRDs7aUVBRWlFO0FBQ2pFO0VBQ0k7SUFBTSxXQUFXO0lBQUMsb0NBQXFCO1lBQXJCLDRCQUFxQjtHQzBCeEM7RUR6QkM7SUFBTSxXQUFXO0lBQUMsbUNBQXFCO1lBQXJCLDJCQUFxQjtHQzZCeEM7Q0FDRjtBRGhDRDtFQUNJO0lBQU0sV0FBVztJQUFDLG9DQUFxQjtZQUFyQiw0QkFBcUI7R0MwQnhDO0VEekJDO0lBQU0sV0FBVztJQUFDLG1DQUFxQjtZQUFyQiwyQkFBcUI7R0M2QnhDO0NBQ0Y7O0FENUJEO0VBQ0k7SUFBTSx3QkFBd0I7SUFBQyxXQUFVO0dDaUMxQztFRGhDQztJQUFNLG9CQUFvQjtJQUFDLFdBQVU7R0NvQ3RDO0NBQ0Y7O0FEdkNEO0VBQ0k7SUFBTSx3QkFBd0I7SUFBQyxXQUFVO0dDaUMxQztFRGhDQztJQUFNLG9CQUFvQjtJQUFDLFdBQVU7R0NvQ3RDO0NBQ0Y7O0FEbkNEO0VBQ0k7SUFBTSxXQUFXO0lBQUMscUNBQXFCO1lBQXJCLDZCQUFxQjtHQ3dDeEM7RUR2Q0M7SUFBTSxXQUFXO0lBQUMsaUNBQXFCO1lBQXJCLHlCQUFxQjtHQzJDeEM7Q0FDRjs7QUQ5Q0Q7RUFDSTtJQUFNLFdBQVc7SUFBQyxxQ0FBcUI7WUFBckIsNkJBQXFCO0dDd0N4QztFRHZDQztJQUFNLFdBQVc7SUFBQyxpQ0FBcUI7WUFBckIseUJBQXFCO0dDMkN4QztDQUNGOztBRDFDRDs7aUVBRWlFO0FBQ2pFO0VBQ0ksb0JBQW9CO0VBQ3BCLGtCQUFrQjtFQUFFLHVCQUF1QjtFQUMzQyxZQUFZO0VBQ1osa0JBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsc0JBQXNCO0VBQ3RCLGlCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsWUFBWTtDQUNmOztBQUNEO0VBQ0ksVUFBVTtFQUNWLFdBQVc7RUFDWCxzQkFBc0I7Q0FDekI7O0FBQ0Q7RUFDSSxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIsZUFBZTtFQUNmLGlDQUFpQztFQUNqQywrQ0FBK0M7RUFDL0MsdUNBQXVDO0NBQzFDOztBQUNEO0VBQ0ksb0JBQW9CO0NBQ3ZCOztBQUVEO0VBQ0k7SUFDSSxnQkFBZ0I7R0FDbkI7Q0NpREoiLCJmaWxlIjoibWFpbi5jc3MifQ== */
