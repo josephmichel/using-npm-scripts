@@ -28,7 +28,7 @@ This is a link to the project [demo](http://searo.surge.com)
 This application is tested on the browsers Chrome, Safari, Firefox and Internet Explorer 10 and edge. 
 The application is tested on android and IOS devices in addition to Windows and Mac desktop.
 
-### Project Folder Structure
+## Project Folder Structure
     .
     ├── builds                  # The Main Project folder.
     │   ├── development         # Use for viewing the code, Source files for the developing process.
@@ -51,7 +51,7 @@ The application is tested on android and IOS devices in addition to Windows and 
 * For direct production and deployment use the folder **builds > production**
 * For developing and/or viewing the written HTML, SCSS, CSS and JS code navigate to the folder **builds > development**
 
-### Instructions for development and production
+## Instructions for development and production
 
 1. Clone or Download the project.
 
